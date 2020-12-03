@@ -1,119 +1,103 @@
- 
+/* Sidebar */
+/* 
+*{
+    background: white;
+} */
 
-  *{
-    background: wheat;
-}
-
-
-#sidebar{
-  float: left;
-  width: 28%;
-  font-weight: 19px;
-  background-color: grey;
-  color: black;
-  list-style: none;
-  position: fixed;
-  height: 100%;
-  width: 20px;
-  z-index: 1;
-  border-radius: solid;
-  margin-bottom: 40px;
+#sidebar-wrapper{
+    z-index:1;
+    position: absolute;
+    width:0;
+    height:100%;
+    overflow-y:hidden;
+    background: #5b4282;
+    opacity:0.9;
+      transition:all .5s;
+      display:flex;
+      align-items:center;
+  }
   
-  opacity: 0.9;
+  /* Main Content */
+  #page-content-wrapper{
+    width: 100%;	
+    position: absolute;
+    padding:15px;
+      transition:all .5s;
+  }
   
-
-}
-
-#sidebar a{
-  padding: 10px 10px 10px 30px;
-  text-decoration: none;
-  font-size: 14px;
-
-  display: block;
-}
-p{
-  color: green;
-  text-align: left;
-  font-size :bold;
-}
-
-#project,#list,#general{
-  width: 70%;
-  float: right;
-  display: flexbox;
-}
-
+  #menu-toggle{
+      transition:all .3s;
+      font-size:2em;
+  }
+  /* Change the width of the sidebar to display it*/
+  #wrapper.menuDisplayed #sidebar-wrapper{
+    width:250px;
+  }
   
-
-
-/* new kaamil  */
-#list{
-  list-style: none;
+  #wrapper.menuDisplayed #page-content-wrapper{
+    padding-left:250px;
+  }
   
-  padding: 0.5em;
-  background: blue;
-}
-
-#project{
-  padding-left: 0px;
-  background :black;
-  text-align: right;
-  display: flex;
+  /* Sidebar styling */
+  .sidebar-nav{
+    padding:0;
+    list-style:none; 
+      transition:all .5s;
+      width:100%;
+      text-align:center;
+  }
   
+  .sidebar-nav li{
+    line-height:40px;  
+      width:100%;
+      transition:all .3s;
+      padding:10px;
+  }
   
-}
-li{
-  margin: 0.5px;
-  padding: 0.5px;
-  border-radius: 0.24em;
-  box-shadow: 0em 0.25em 0.2em rgba(0,0,0,0,25);
-  flex-grow: 1;
-  background: cadetblue;
+  .sidebar-nav li a {
+    display:block;
+    text-decoration:none;
+    color:#ddd;
+  }
   
+  .sidebar-nav li:hover{
+    background:#846bab;
+  }
+
+  button:focus {
+    outline: 0;
 }
 
-#project>input{
-  font-size: 1em;
-  flex-grow: 1;
-  padding: 0.5em;
-  border-top-left-radius:0.25em;
-  border-bottom-right-radius:0.25em;
-  border-top-right-radius: 00.25em;
-  border-bottom-left-radius:0.25em;
-  border: none;
+.navbar .dropdown-menu .form-control {
+    width: 200px;
   
-}
+  }
 
-#project>input{
-  text-align: left;
-  color:pink;
-  background: wheat;
-  font-weight: bold;
-  
-}
-#project>button{
-  background:wheat;
+  #list{
+    list-style: none;
+   
 
+  }
 
-}
+  #project>input{
+    font-size: 1em;
+    flex-grow: 1;
+    padding: 0.5em;
+    border-top-left-radius:0.25em;
+    border-bottom-right-radius:0.25em;
+    border-top-right-radius: 00.25em;
+    border-bottom-left-radius:0.25em;
+    border: 1;
+    font-weight: bold;
+    text-align: left;
+    display: flexbox;
+    
+  }
+div>fixed-bottom{
+ position: bottom;
+  }
 
-/* #div{
-  backround-clolor:red;
-  height: 63px;
-}
-#noor,span{
-  float: left;
-  display: block;
-  color: green;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px; */
+  #project>input{
+    flex-grow: 5em;
 
-}
-.navbar-toggle>span{
-  float: left;
-}
-@media(max-width:568px){
-  .navbar-nav{display:none}
-}
+  }

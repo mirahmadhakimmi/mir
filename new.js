@@ -1,4 +1,11 @@
-$(function(){
+$(document).ready(function(){
+    $("#menu-toggle").click(function(e){
+      e.preventDefault();
+      $("#wrapper").toggleClass("menuDisplayed");
+    });
+  });
+  
+  $(function(){
     $("#project").submit(event => {
         event.preventDefault();
         console.log(event);
